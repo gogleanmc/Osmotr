@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+
+</head>
+<body>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script src="script.js"></script>
+
+
+
+<div id = "mainForm">
+
+    <!-- <input id="date" type="date">
+    <input id="time" type="time"> -->
+
+    <div id = "fio">
+        <h4>ФИО</h4>
+        <form >
+            <textarea id="fiotext"></textarea>
+         </form>
+    </div>
+
+<div id = "complaints">
+    <h4>Жалобы</h4>
+    <form >
+        <textarea id="textareaСomplaints"></textarea>
+     </form>
+</div>
+
+<div id = "anamnezMorbi">
+    <h4>Анамнез заболевания</h4>
+    <form >
+        <textarea id="textareaAnamnezMorbi"></textarea>
+     </form>
+</div>
+
+<div id = "medicine">
+    <h4>Принимает препараты</h4>
+    <form >
+        <textarea id="textareaMedicine"></textarea>
+     </form>
+
+     <div>
+        <input type = "checkbox" id = "checkboxMedicine">Не принимает</input>
+     </div>
+</div>
+
+<div id = "anamnezEpid">
+    <h4>Эпид. анамнез</h4>
+    <form >
+        <textarea id="textareaAnamnezEpid"></textarea>
+     </form>
+
+     <div>
+        <input type = "checkbox" id = "checkboxAnamnezEpid">Без особеностей</input>
+     </div>
+</div>
+
+<div id = "anamnezWork">
+    <h4>Клинико-экспертный анамнез</h4>
+    <form >
+        <textarea id="textareAnamnezWork"></textarea>
+     </form>
+</div>
+
+<div id = "anamnezAlerg">
+    <h4>Алергологический анамнез</h4>
+    <form >
+        <textarea id="textareAnamnezAlerg"></textarea>
+     </form>
+
+     <div>
+        <input type = "checkbox" id = "checkboxAnamnezAlerg">Без особеностей</input>
+     </div>
+</div>
+
+<div id = "habits">
+    <h4>Хронические интоксикации</h4>
+    <form >
+        <textarea id="textarehabits"></textarea>
+     </form>
+
+     <div>
+        <input type = "checkbox" id = "checkboxHabits">Инт. отрицает</input>
+     </div>
+     
+</div>
+
+<div id = "chDiseases">
+    <h4>Хронические заболевания</h4>
+    <form >
+        <textarea id="textchDiseases"></textarea>
+     </form>
+
+     <div>
+        <input type = "checkbox" id = "checkboxСhDiseases">Хрон. заб нет</input>
+     </div>
+</div>
+
+<div id = "objectively">
+    <h4>Объективно</h4>
+    <div id = "table">
+        <div class = "cell">
+            <p>Температура тела: </p>
+            <input type = "text"  id = "tempText">
+        </div>
+
+        <div class = "cell">
+            <p>Рост: </p>
+            <input type = "text"  id = "heightText">
+        </div>
+
+        <div class = "cell">
+            <p>Вес: </p>
+            <input type = "text"   id = "weightText">
+        </div>
+
+        <div class = "cell">
+            <p>Пульс:</p>
+            <input type = "text"  id = "PsText">
+        </div>
+
+        <div class = "cell">
+            <p>Сатурация:</p>
+            <input type = "text"  id = "SaOText">
+        </div>
+
+        <div class = "cell">
+            <p>АД Сис:</p>
+            <input type = "text"  id = "AdSText">
+        </div>
+
+
+        <div class = "cell">
+            <p>АД Дис: </p>
+            <input type = "text" id = "AddText">
+        </div>
+
+    </div>
+
+    
+    <div>
+        <p>
+            Состояние
+            <select id = "condition">
+                <option value="удовлетворительное"> удовлетворительное.</option>
+                <option value="средней тяжести"> средней тяжести.</option>
+                <option value="крейне тяжёлое"> крейне тяжёлое.</option>
+                <option value=">терминальное" >терминальное.</option>
+             </select>
+
+            Сознание
+            <select id = "maind">
+                <option value="ясное"> ясное.</option>
+                <option value="неясное"> неясное.</option>
+                <option value="в отуплении"> в отуплении.</option>
+                <option value="в коме" >в коме.</option>
+                <option value="с бредом" >с бредом.</option>
+                <option value="c галлюцинациями" >c галлюцинациями.</option>
+            </select>
+
+        </p>
+
+        <p>
+            Кожный покров
+            <select id = "skin">
+                <option value="чистый"> чистый.</option>
+                <option value="с высыпаниями"> "с высыпаниями.</option>
+            </select>
+
+            Кожа
+            <select id = "skinColor">
+                <option value="бледно-розовая"> бледно-розовая,</option>
+                <option value="бледная"> бледная,</option>
+                <option value="гиперемированна"> гиперемированна,</option>
+                <option value="синюшная"> синюшная,</option>
+                <option value="желтушная"> желтушная,</option>
+                <option value="бронзовая"> бронзовая,</option>
+            </select>
+
+            <select id = "skinWet">
+                <option value="влажная"> влажная,</option>
+                <option value="сухая"> сухая,</option>
+            </select>
+            
+            <!-- тургор -->
+
+            <select id = "turgor">
+                <option value="эластичная"> эластичная.</option>
+                <option value="не эластичная"> не эластичная.</option>
+            </select>
+        </p>
+
+        <p>  
+            <select id = "sveling">
+                <option value="Переферических отеков нет"> Переферических отеков нет.</option>
+                <option value="Отёки"> Отёки </option>
+                <input type = "text"  id = "svelingText">
+            </select>
+
+            
+
+            Дыхание
+            <select id = "breath">
+                <option value="везикулярное">везикулярное.</option>
+                <option value="жёсткое"> жёсткое.</option>
+                <option value="ослабленное"> ослабленное.</option>
+            </select>
+        </p>
+
+        <p>
+            В позе Ромерга  
+            <select id = "romberg">
+                <option value="устойчив">устойчив.</option>
+                <option value="не устойчив"> не устойчив.</option>
+            </select>
+            
+            
+            Пальценосовую пробу выполняет
+            <select id = "finherTonose">
+                <option value="удовлетворительно">удовлетворительно.</option>
+                <option value="с интенцией">с интенцией.</option>
+                <option value="с мимопопаданием"> с мимопопаданием.</option>
+            </select>    
+        </p>
+
+        <p>
+            Кожная чувствительность 
+            <select id = "skinSens">
+                <option value="не нарушена">не нарушена.</option>
+                <option value="нарушена"> нарушена.</option>
+            </select>
+             
+        </p>
+
+        <p>
+            Пациент
+            <select id = "contactPation">
+                <option value="контактен">контактен.</option>
+                <option value="не контактен"> не контактен.</option>
+            </select>
+             
+        </p>
+
+     </div>
+    <form >
+        <textarea id="textaObjectively"></textarea>
+     </form>
+    
+</div>
+
+<div id = "Diagnosis">
+    <h4>Диагноз</h4>
+    <form >
+        <textarea id="textaDiagnosis"></textarea>
+     </form>
+</div>
+
+
+<div id = "concDiagnosis">
+    <h4>Соп. диагноз</h4>
+    <form >
+        <textarea id="textaConcDiagnosis"></textarea>
+     </form>
+</div>
+
+<!-- <div id = "dopDiagnosis">
+    <h4>Жалобы</h4>
+    <form >
+        <textarea id="dopDiagnosisText"></textarea>
+     </form>
+</div> -->
+
+
+<div id = "rec">
+    <h4>Рекомендации и назначения</h4>
+    <form >
+        <textarea id="textaRec"></textarea>
+     </form>
+</div>
+
+    <div class="button">
+        <button onclick="CreateOsmort()">Сгенерировать</button>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

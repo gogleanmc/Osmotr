@@ -1,0 +1,71 @@
+/* #fff {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+#fff div {
+  width: 20px;
+  height: 20px;
+
+}
+#fff p {
+  /* width: 100px; */
+
+
+#checkbox {
+
+  display: inline-block;
+
+}
+#checkbox p {
+  margin: 3px;
+}
+
+#mainForm{
+    /* сверху | справа | снизу | слева */
+    margin: 2px 2px 2px 2px;
+}
+
+#objectively {
+  width: 600px;
+}
+
+.cell {
+  display: table-cell;
+  border: solid 2px rgb(124, 124, 124);
+
+  /* сверху | справа | снизу | слева */
+  margin: 2px 2px 2px 2px;
+
+  padding-top: 5px;
+  padding-right: 3px;
+  padding-bottom: 5px;
+  padding-left: 3px;
+
+  
+} 
+
+#table {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  /* border: solid 2px rgb(117, 117, 117); */
+
+
+
+  padding-top: 5px;
+  padding-right: 3px;
+  padding-bottom: 5px;
+  padding-left: 3px;
+
+
+}
+
+textarea {
+	resize: horizontal;
+	width: 600px;
+	height: 100px;
+}
+
+
