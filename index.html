@@ -13,8 +13,6 @@
 
 <div id = "mainForm">
 
-    <!-- <input id="date" type="date">
-    <input id="time" type="time"> -->
 
     <div id = "fio">
         <h4>ФИО</h4>
@@ -40,23 +38,28 @@
 <div id = "medicine">
     <h4>Принимает препараты</h4>
     <form >
-        <textarea id="textareaMedicine"></textarea>
+        <div>
+            <input type = "checkbox" id = "checkboxMedicine" value = "medicine" onclick = "checkboxAcitviti(this.value)" checked>Не принимает</input>
+         </div>
+
+        <textarea id="textareaMedicine" disabled = "true"></textarea>
      </form>
 
-     <div>
-        <input type = "checkbox" id = "checkboxMedicine">Не принимает</input>
-     </div>
+
 </div>
 
 <div id = "anamnezEpid">
     <h4>Эпид. анамнез</h4>
     <form >
-        <textarea id="textareaAnamnezEpid"></textarea>
-     </form>
 
-     <div>
-        <input type = "checkbox" id = "checkboxAnamnezEpid">Без особеностей</input>
-     </div>
+        <div>
+            <input type = "checkbox" id = "checkboxAnamnezEpid" value = "anamnezEpid" onclick = "checkboxAcitviti(this.value)" checked>Без особеностей</input>
+         </div>
+
+        <textarea id="textareaAnamnezEpid" disabled = "true"></textarea>
+     </form>
+     
+
 </div>
 
 <div id = "anamnezWork">
@@ -69,38 +72,56 @@
 <div id = "anamnezAlerg">
     <h4>Алергологический анамнез</h4>
     <form >
-        <textarea id="textareAnamnezAlerg"></textarea>
+        
+     <div>
+        <input type = "checkbox" id = "checkboxAnamnezAlerg" value = "anamnezAlerg" onclick = "checkboxAcitviti(this.value)"  checked>Без особеностей</input>
+     </div>
+
+        <textarea id="textareAnamnezAlerg" disabled = "true"></textarea>
      </form>
 
-     <div>
-        <input type = "checkbox" id = "checkboxAnamnezAlerg">Без особеностей</input>
-     </div>
 </div>
 
 <div id = "habits">
     <h4>Хронические интоксикации</h4>
+
     <form >
-        <textarea id="textarehabits"></textarea>
+
+        <div>
+            <input type = "checkbox" id = "checkboxHabits"  value = "habits" onclick = "checkboxAcitviti(this.value)" checked>Инт. отрицает</input> 
+        </div>
+
+        <textarea id="textarehabits" disabled = "true"></textarea>
+
      </form>
 
-     <div>
-        <input type = "checkbox" id = "checkboxHabits">Инт. отрицает</input>
-     </div>
+
+     <div class = "cell" >
+        <p><b>Индекс пачка/лет</b></p>
+        <p>Сигарет в день (шт.):</p>
+        <input type = "text"  id = "sigNumb" disabled = "true">
+        <p>Сколько лет курили (год):</p>
+        <input type = "text"  id = "sigYears" disabled = "true">
+    </div>
+
      
 </div>
 
 <div id = "chDiseases">
     <h4>Хронические заболевания</h4>
     <form >
-        <textarea id="textchDiseases"></textarea>
+        <div>
+            <input type = "checkbox" id = "checkboxСhDiseases" value = "chDiseases" onclick = "checkboxAcitviti(this.value)" checked>Хрон. заб нет</input>
+         </div>
+         
+        <textarea id="textchDiseases" disabled = "true"></textarea>
      </form>
 
-     <div>
-        <input type = "checkbox" id = "checkboxСhDiseases">Хрон. заб нет</input>
-     </div>
+
 </div>
 
 <div id = "objectively">
+
     <h4>Объективно</h4>
     <div id = "table">
         <div class = "cell">
@@ -165,15 +186,15 @@
         </p>
 
         <p>
-            Кожный покров
+            Кожный покров и выдимые слизистые
             <select id = "skin">
-                <option value="чистый"> чистый.</option>
-                <option value="с высыпаниями"> "с высыпаниями.</option>
+                <option value="чистые"> чистые</option>
+                <option value="с высыпаниями"> "с высыпаниями</option>
             </select>
 
-            Кожа
+            
             <select id = "skinColor">
-                <option value="бледно-розовая"> бледно-розовая,</option>
+                <option value="нормальной окраски"> нормальной окраски</option>
                 <option value="бледная"> бледная,</option>
                 <option value="гиперемированна"> гиперемированна,</option>
                 <option value="синюшная"> синюшная,</option>
@@ -182,16 +203,16 @@
             </select>
 
             <select id = "skinWet">
-                <option value="влажная"> влажная,</option>
+                <option value=" и влажности"> и влажности.</option>
                 <option value="сухая"> сухая,</option>
             </select>
             
-            <!-- тургор -->
+            <!-- тургор 
 
             <select id = "turgor">
                 <option value="эластичная"> эластичная.</option>
                 <option value="не эластичная"> не эластичная.</option>
-            </select>
+            </select> -->
         </p>
 
         <p>  
@@ -266,13 +287,6 @@
         <textarea id="textaConcDiagnosis"></textarea>
      </form>
 </div>
-
-<!-- <div id = "dopDiagnosis">
-    <h4>Жалобы</h4>
-    <form >
-        <textarea id="dopDiagnosisText"></textarea>
-     </form>
-</div> -->
 
 
 <div id = "rec">

@@ -51,6 +51,7 @@ let forms = ['complaints','anamezMorbi'];
 
 
 
+
 var elements = [];
 
 // var mainForm = document.createElement('div');
@@ -60,6 +61,38 @@ var elements = [];
 var osmotrForm = document.createElement('div');
 osmotrForm.id = 'osmotrForm';
 document.body.prepend(osmotrForm);
+
+function checkboxAcitviti(value){
+    var  inputs = null;
+    try {
+        inputs = document.getElementById(value).children[2].getElementsByTagName('input');
+    } catch {
+
+    }
+    
+    if (document.getElementById(value).children[1][0].checked) {
+        document.getElementById(value).children[1][1].disabled = true;
+
+        if (inputs) {
+            
+            for (let el of  inputs) {
+                el.disabled = true;
+            }
+        }
+
+    } else {
+        document.getElementById(value).children[1][1].disabled = false;
+        
+        if (inputs) {
+
+            for (let el of  inputs) {
+                el.disabled = false;
+            }
+        }
+
+    } 
+
+}
 
 // var parametrsDiv = document.createElement('div');
 // parametrsDiv.id = 'parametrsDiv';
@@ -110,6 +143,8 @@ class Element {
     delateElement() {
     }
 };
+
+
 
 class Input extends Element {
     constructor(type, id, text,  contaner, contanerId) {
@@ -169,7 +204,7 @@ class Button extends Element {
     }
 };
 
-// let complaints = new Element('p','','complaints','Жалобы','div','fff');
+
 // let textareaСomplaints = new TextArea('textarea','textareaСomplaints','div','fff');
 
 // let anamnezMorbi = new Element('p','','anamnezMorbi','Анамнез заболевания','div','fff');
@@ -344,6 +379,10 @@ function CreateOsmort() {
     document.getElementById('mainForm').style.display = 'none'; // Скрыть главную форму
     document.getElementById('osmotrForm').style.display = '';
 
+
+    //Индекс пачка лет  sigNumb sigYears
+    let sigNumb = document.getElementById('sigNumb').value;
+    let sigYears = document.getElementById('sigYears').value;
     // температура тела 
     let temp = document.getElementById('tempText').value
     // рост вес ад пульс окс 
@@ -362,7 +401,7 @@ function CreateOsmort() {
     let skin = document.getElementById('skin').value;
     let skinColor = document.getElementById('skinColor').value;
     let skinWet = document.getElementById('skinWet').value;
-    let turgor = document.getElementById('turgor').value;
+    // let turgor = document.getElementById('turgor').value;
 
     let sveling = document.getElementById('sveling').value;
     let svelingText = document.getElementById('svelingText').value;
@@ -376,7 +415,7 @@ function CreateOsmort() {
 
 
  let defObj = ' t тела = '+ temp +' °C. Состояние '+ condition +'. Сознание '+ maind +'. \n' + 
- 'Кожный покров '+ skin +'. Кожа '+ skinColor + ', ' + skinWet + ', ' + turgor +'. '+ sveling + ' ' + svelingText + '. Носовое дыхание не затруднено.' + 
+ 'Кожный покровы и видимые слизистые '+ skin +','+ skinColor + '' + skinWet + '. ' + sveling + ' ' + svelingText + '. Носовое дыхание не затруднено.' + 
  'Слизистая оболочка зева обычной окраски. Язык влажный, чистый.' +  
  'Лимфатические узлы при пальпации не увеличены, безболезненны. Движения в суставах не ограничены.<br><br>\n' + 
  'Рост -  '+ height +' см. Вес - '+ weight + ' кг. ИМТ - '+ IMT + ' кг/м2. Пульс - ' + Ps +' уд/мин. SpO2 -' + SaO + ' %. АДД  - '+ AdS +'/'+ Add +' мм.рт.ст. \n' + 
@@ -388,7 +427,7 @@ function CreateOsmort() {
  'Печень не выступает из-под реберной дуги, контур гладкий. Естественные отправления, со слов, в норме.' + 
  'Поколачивание по поясничной области безболезненно с обеих сторон. \n' +
  '<br><br>Положение языка при высовывании симметричное, девиации не выявлено, походка с открытыми глазами физиологична. ' + 
- 'В позе Ромберга '+ romberg +'. Пальценосовую пробу выполняет '+finherTonose+'. Кожная и глубокая чувствительность '+skinSens+'. Менингеальные симптомы отриц. ' + 
+ 'В позе Ромберга '+ romberg +'. Пальценосовую пробу выполняет '+finherTonose+'. Кожная и глубокая чувствительность '+skinSens+'. Менингеальные симптомы отрицательные ' + 
  '<br><br>Пациент '+contactPation+', ориентируется в пространстве и времени. Речь чёткая, связная.';
 
     // установка даты
@@ -441,6 +480,12 @@ function CreateOsmort() {
 
     } else {
         habits.text = ' \n Хронические интоксикации: ' + habitsValue + '\n';
+        if (sigNumb && sigYears) {
+            habits.text = habits.text + "Индекс пачка/лет - " + sigNumb * sigYears; // Высчитывает индекс пачка/лет
+            console.log(typeof(sigNumb), sigYears);
+        } else {
+            console.log(sigNumb, sigYears);
+        }
     }
 
 
@@ -552,7 +597,7 @@ function backButton(elementsForm){
     }
 
     
-
+    
 }
 
 function saveToText(){
